@@ -91,3 +91,4 @@ void Ticket::loadFromFile(ifstream& file, Performance* perfList) {
     string separator;
     std::getline(file, separator);
 }
+
