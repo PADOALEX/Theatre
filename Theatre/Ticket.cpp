@@ -39,7 +39,8 @@ void Ticket::inputBuyerInfo() {
     }
 }
 
-void Ticket::displayTicket() {
+void Ticket::displayTicket()
+{
     cout << "Ticket ID: " << id << endl;
     cout << "Buyer: " << buyerName << endl;
     if (performance != nullptr) {
@@ -91,4 +92,3 @@ void Ticket::loadFromFile(ifstream& file, Performance* perfList) {
     string separator;
     std::getline(file, separator);
 }
-
