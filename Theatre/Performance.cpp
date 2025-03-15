@@ -209,7 +209,6 @@ bool Performance::actorInitialsConflict(Performance* other) {
     }
     return false;
 }
-
 const char* Performance::getTitle() const {
     return title;
 }
