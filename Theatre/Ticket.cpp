@@ -38,6 +38,7 @@ void Ticket::inputBuyerInfo() {
         cin.getline(buyerName, 100);
     }
 }
+
 void Ticket::displayTicket()
 {
     cout << "Ticket ID: " << id << endl;
@@ -50,8 +51,7 @@ void Ticket::displayTicket()
     cout << "Seat Number: " << seatNumber << endl;
 }
 
-void Ticket::saveToFile(ofstream& file)
-{
+void Ticket::saveToFile(ofstream& file) {
     if (!file.is_open() || performance == nullptr) return;
 
     file << id << endl;
