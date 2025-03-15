@@ -113,7 +113,7 @@ void Performance::displayPerformance() {
     cout << "Intermissions: " << intermissions << endl;
 
     cout << "Actors: ";
-    for (int i = 0; i < actorCount; i++) {
+	for (int i = 0; i < actorCount; i++) {   // Display actors
         cout << actors[i].name << " " << actors[i].surname;
         if (i < actorCount - 1) {
             cout << ", ";
