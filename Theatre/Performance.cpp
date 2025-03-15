@@ -296,7 +296,6 @@ void Performance::loadFromFile(std::ifstream& file) {
     string separator;
     getline(file, separator);
 }
-
 Performance* Performance::getNext() const {
     return next;
 }
