@@ -209,7 +209,6 @@ bool Performance::actorInitialsConflict(Performance* other) {
     }
     return false;
 }
-
 const char* Performance::getTitle() const {
     return title;
 }
@@ -297,7 +296,6 @@ void Performance::loadFromFile(std::ifstream& file) {
     string separator;
     getline(file, separator);
 }
-
 Performance* Performance::getNext() const {
     return next;
 }
