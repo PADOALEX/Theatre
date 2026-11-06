@@ -32,10 +32,10 @@ void Ticket::generateTicket(int ticketId, Performance* perf) {
 
 void Ticket::inputBuyerInfo() {
     cout << "Enter buyer's name: ";
-    cin.getline(buyerName, 100);
+    if (!cin.getline(buyerName, 100)) return;
     while (strlen(buyerName) == 0) {
         cout << "Buyer name cannot be empty. Enter buyer's name: ";
-        cin.getline(buyerName, 100);
+        if (!cin.getline(buyerName, 100)) return;
     }
 }
 
