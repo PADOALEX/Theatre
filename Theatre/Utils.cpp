@@ -254,6 +254,7 @@ int menu() {
 
     // Input validation for menu choice
     while (cin.fail() || choice < 0 || choice > 9) {
+        if (cin.eof()) return 0;
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Invalid choice. Please enter a number between 0 and 9: ";
@@ -420,14 +421,14 @@ void sellTicket(Ticket*& ticketHead, Performance* perfHead, int& ticketCounter) 
         return;
     }
 
+    if (ticketCounter == numeric_limits<int>::max()) { cout << "Ticket ID limit reached.\n"; return; }
     Ticket* newTicket = new Ticket();
-    newTicket->generateTicket(ticketCounter++, perf);
     newTicket->inputBuyerInfo();
+    if (!cin) { delete newTicket; return; }
+    newTicket->generateTicket(ticketCounter++, perf);
 
     newTicket->setNext(ticketHead);
     ticketHead = newTicket;
-
-    perf->decreaseAvailableSeats();
 
     cout << "\nTicket sold successfully.\n";
     cout << "=== TICKET INFORMATION ===\n";
